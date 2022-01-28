@@ -1,9 +1,9 @@
-var express = require('express');
+let express = require('express');
 
 
-var todoControllers = require('./controllers/todoController');
+let todoControllers = require('./controllers/todoController');
 
-var app = express();
+let app = express();
 
 
 //set up template engine
@@ -12,7 +12,9 @@ app.set('view engine', 'ejs');
 
 
 //static files
-app.use(express.static('./public'));
+app.use(express.static(__dirname + '/public/'));
+
+
 
 
 //fire function

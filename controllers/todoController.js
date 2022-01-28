@@ -1,4 +1,5 @@
 var bodyParser=require('body-parser');
+const res = require('express/lib/response');
 
 var data=[{item:'xyzw'},{item:'abcd'},{item:'jheir'}];
 var urlencodedParser=bodyParser.urlencoded({extended:false});
@@ -10,9 +11,9 @@ module.exports = function (app) {
      });
 
      app.post('/todo',urlencodedParser ,function (req, res) {
+
           data.push(req.body);
           res.json(data);
-          
 
      });
 
@@ -23,5 +24,4 @@ module.exports = function (app) {
           res.json(data);
 
      });
-
 }
